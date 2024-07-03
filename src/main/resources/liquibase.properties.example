@@ -1,0 +1,12 @@
+
+logging: debug
+
+# MySQL database configuration
+driver: com.mysql.cj.jdbc.Driver
+url: jdbc:mysql://127.0.0.1:3306/users_db
+username: root
+password: 123456
+
+# Generate "virtual db" out of Hibernate entities
+referenceUrl: hibernate:spring:com.khansoft.users.entity?dialect=org.hibernate.dialect.MySQLDialect
+referenceDriver: liquibase.ext.hibernate.database.connection.HibernateDriver

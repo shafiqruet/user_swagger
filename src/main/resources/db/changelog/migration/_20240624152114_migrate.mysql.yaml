@@ -1,0 +1,572 @@
+databaseChangeLog:
+- changeSet:
+    id: 1719220880320-1
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: authoritiesPK
+            name: id
+            type: BIGINT
+        - column:
+            name: active_status
+            type: INT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: created_by
+            type: BIGINT
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: updated_by
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(200)
+        tableName: authorities
+- changeSet:
+    id: 1719220880320-2
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: password_change_historyPK
+            name: id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: user_id
+            type: BIGINT
+        tableName: password_change_history
+- changeSet:
+    id: 1719220880320-3
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: refresh_tokensPK
+            name: id
+            type: BIGINT
+        - column:
+            name: active_status
+            type: INT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: created_by
+            type: BIGINT
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: updated_by
+            type: BIGINT
+        - column:
+            name: expiry_date
+            type: datetime
+        - column:
+            name: token
+            type: VARCHAR(255)
+        - column:
+            name: user_id
+            type: BIGINT
+        tableName: refresh_tokens
+- changeSet:
+    id: 1719220880320-4
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: rolesPK
+            name: id
+            type: BIGINT
+        - column:
+            name: active_status
+            type: INT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: created_by
+            type: BIGINT
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: updated_by
+            type: BIGINT
+        - column:
+            name: name
+            type: VARCHAR(20)
+        tableName: roles
+- changeSet:
+    id: 1719220880320-5
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: roles_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: authorities_id
+            type: BIGINT
+        tableName: roles_authorities
+- changeSet:
+    id: 1719220880320-6
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: user_terms_conditionsPK
+            name: id
+            type: INT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: file_name
+            type: VARCHAR(255)
+        - column:
+            name: lang_code
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: user_type_id
+            type: INT
+        tableName: user_terms_conditions
+- changeSet:
+    id: 1719220880320-7
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: usersPK
+            name: id
+            type: BIGINT
+        - column:
+            name: account_non_locked
+            type: BIT
+        - column:
+            name: address
+            type: VARCHAR(255)
+        - column:
+            name: birth_date
+            type: date
+        - column:
+            name: city
+            type: VARCHAR(255)
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: company
+            type: VARCHAR(255)
+        - column:
+            name: company_id
+            type: VARCHAR(255)
+        - column:
+            name: country_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: email
+            type: VARCHAR(255)
+        - column:
+            name: email_verified
+            type: BIT
+        - column:
+            name: email_verified_at
+            type: datetime
+        - column:
+            name: failed_attempts
+            type: INT
+        - column:
+            name: first_name
+            type: VARCHAR(255)
+        - column:
+            name: last_name
+            type: VARCHAR(255)
+        - column:
+            name: locked_at
+            type: datetime
+        - column:
+            name: mfa_activated
+            type: BIT
+        - column:
+            name: mfa_secret
+            type: VARCHAR(255)
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: password_updated_at
+            type: datetime
+        - column:
+            name: phone
+            type: VARCHAR(255)
+        - column:
+            name: reference_no
+            type: VARCHAR(255)
+        - column:
+            name: sponsor
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: VARCHAR(255)
+        - column:
+            name: status
+            type: VARCHAR(255)
+        - column:
+            name: token
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: vat_id
+            type: VARCHAR(255)
+        - column:
+            name: zip
+            type: VARCHAR(255)
+        - column:
+            name: sponsor_uid
+            type: BIGINT
+        - column:
+            name: user_type_id
+            type: VARCHAR(255)
+        - column:
+            name: terms_conditions_id
+            type: INT
+        tableName: users
+- changeSet:
+    id: 1719220880320-8
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: users_preferencesPK
+            name: id
+            type: BIGINT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            name: created_at
+            type: datetime
+        - column:
+            name: is_mfa_activated
+            type: BIT
+        - column:
+            name: language_id
+            type: INT
+        - column:
+            name: mail_template_id
+            type: INT
+        - column:
+            name: mfa_secret
+            type: VARCHAR(255)
+        - column:
+            name: mfa_updated_at
+            type: datetime
+        - column:
+            name: updated_at
+            type: datetime
+        - column:
+            name: user_id
+            type: BIGINT
+        tableName: users_preferences
+- changeSet:
+    id: 1719220880320-9
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: users_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: roles_id
+            type: BIGINT
+        tableName: users_roles
+- changeSet:
+    id: 1719220880320-10
+    author: shafiqul (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: users_typePK
+            name: id
+            type: INT
+        - column:
+            name: client_id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: created_date
+            type: datetime
+        - column:
+            name: name
+            type: VARCHAR(20)
+        - column:
+            name: status
+            type: SMALLINT
+        - column:
+            name: updated_date
+            type: datetime
+        tableName: users_type
+- changeSet:
+    id: 1719220880320-11
+    author: shafiqul (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: code
+        constraintName: UC_USERS_TYPECODE_COL
+        tableName: users_type
+- changeSet:
+    id: 1719220880320-12
+    author: shafiqul (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: phone, client_id
+        constraintName: UK2e9yhxp6i2kib7ewh64537s25
+        tableName: users
+- changeSet:
+    id: 1719220880320-13
+    author: shafiqul (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: email, client_id
+        constraintName: UK2yb4hk3infp1on2ch8lcsjyq
+        tableName: users
+- changeSet:
+    id: 1719220880320-14
+    author: shafiqul (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: reference_no, client_id
+        constraintName: UK5jtcgo8g75lxh19kdiromne6i
+        tableName: users
+- changeSet:
+    id: 1719220880320-15
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: refresh_tokens
+        constraintName: FK1lih5y2npsf8u5o3vhdb9y0os
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1719220880320-16
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_type_id
+        baseTableName: users
+        constraintName: FK5snet2ikvi03wd4rabd40ckdl
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: users_type
+        validate: true
+- changeSet:
+    id: 1719220880320-17
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_type_id
+        baseTableName: user_terms_conditions
+        constraintName: FK8g42rbr0eyltytvvta2upoy38
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users_type
+        validate: true
+- changeSet:
+    id: 1719220880320-18
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: roles_id
+        baseTableName: users_roles
+        constraintName: FKa62j07k5mhgifpp955h37ponj
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: roles
+        validate: true
+- changeSet:
+    id: 1719220880320-19
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: password_change_history
+        constraintName: FKab8p88cd6ae1uvxb9mymxy99l
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1719220880320-20
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: users_preferences
+        constraintName: FKc4iohl2foogcehrk8jof3bomm
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1719220880320-21
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: roles_id
+        baseTableName: roles_authorities
+        constraintName: FKcj918h3ee3qad1xwbx4jvvcgc
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: roles
+        validate: true
+- changeSet:
+    id: 1719220880320-22
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: authorities_id
+        baseTableName: roles_authorities
+        constraintName: FKe4pjsn2c2ttg8bpbe1yk29snn
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: authorities
+        validate: true
+- changeSet:
+    id: 1719220880320-23
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: terms_conditions_id
+        baseTableName: users
+        constraintName: FKiw964pio9sghlgvebsidn1a4n
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: user_terms_conditions
+        validate: true
+- changeSet:
+    id: 1719220880320-24
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: users_id
+        baseTableName: users_roles
+        constraintName: FKml90kef4w2jy7oxyqv742tsfc
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1719220880320-25
+    author: shafiqul (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sponsor_uid
+        baseTableName: users
+        constraintName: FKrwo7elk1nuiv7hm2n9a3fq038
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+

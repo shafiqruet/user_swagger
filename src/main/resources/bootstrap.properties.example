@@ -1,0 +1,15 @@
+spring.main.banner-mode=off
+#Spring Boot Application Name
+spring.application.name=users
+# The port on which the application will be listen to
+server.port=8079
+#Activate default profile
+spring.profiles.active=local
+#For coloured output
+spring.output.ansi.enabled=always
+#Enable Logging
+logging.level.org.springframework.web=debug
+logging.level.com.khansoft.adminusers=debug
+#Error Handling
+server.error.whitelabel.enabled=false
+

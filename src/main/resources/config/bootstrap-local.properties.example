@@ -1,0 +1,5 @@
+#configuration to connect to config server
+spring.cloud.config.uri=https://localhost:8888
+spring.cloud.config.fail-fast=true
+spring.cloud.config.username=admin
+spring.cloud.config.password=admin1X2Y4
